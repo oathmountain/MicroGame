@@ -13,7 +13,7 @@ public class Main {
             Key key;
             do{
                 Thread.sleep(5);
-                key = render.getTerminal.readInput();
+                key = renderer.getTerminal().readInput();
             }while(key == null);
         }
     }
