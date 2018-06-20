@@ -19,6 +19,8 @@ public class Main {
                 }
                 key = renderer.getTerminal().readInput();
             }while(key == null);
+
+            System.out.println(key.getCharacter() + " " + key.getKind());
         }
     }
 }
