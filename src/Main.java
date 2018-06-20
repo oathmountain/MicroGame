@@ -18,6 +18,8 @@ public class Main {
                     System.out.println("Thread is not sleeping properly!");
                 }
                 key = renderer.getTerminal().readInput();
+                engine.tick(key, characters);
+                renderer.render(characters);
             }while(key == null);
 
             System.out.println(key.getCharacter() + " " + key.getKind());
