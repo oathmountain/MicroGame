@@ -12,7 +12,11 @@ public class Main {
         while(true){
             Key key;
             do{
-                Thread.sleep(5);
+                try {
+                    Thread.sleep(5);
+                }catch(Exception e){
+                    System.out.println("Thread is not sleeping properly!");
+                }
                 key = renderer.getTerminal().readInput();
             }while(key == null);
         }
