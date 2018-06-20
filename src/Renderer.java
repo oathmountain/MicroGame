@@ -12,10 +12,13 @@ public class Renderer {
     }
 
     public void render(GameCharacter[] objects) {
+        terminal.clearScreen();
         for(GameCharacter g : objects) {
             terminal.moveCursor(g.getX(),g.getY());
             terminal.putCharacter(g.getSymbol());
 
         }
     }
+
+    
 }

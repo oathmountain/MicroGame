@@ -9,6 +9,7 @@ public class Main {
         GameCharacter[] characters = new GameCharacter[1];
         characters[0] = new Player();
 
+<<<<<<< HEAD
         while(true){
             Key key;
             do{
@@ -16,5 +17,7 @@ public class Main {
                 key = render.getTerminal.readInput();
             }while(key == null);
         }
+=======
+>>>>>>> 97137a6640b4110747773f061bcb32760752c500
     }
 }
