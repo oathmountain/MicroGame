@@ -8,5 +8,6 @@ public class Main {
         Renderer renderer = new Renderer();
         GameCharacter[] characters = new GameCharacter[1];
         characters[0] = new Player();
+
     }
 }
