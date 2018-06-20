@@ -1,4 +1,4 @@
 package GameObjects;
 
-public class Player extends Character {
+public class Player extends GameCharacter {
 }
