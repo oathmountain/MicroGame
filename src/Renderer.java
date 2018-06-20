@@ -1,12 +1,21 @@
+import GameObjects.GameCharacter;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import java.nio.charset.Charset;
 
 public class Renderer {
+    private Terminal terminal;
     public Renderer() {
-        Terminal terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
+        terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
         terminal.enterPrivateMode();
     }
 
+    public void render(GameCharacter[] objects) {
+        for(GameCharacter g : objects) {
+            terminal.moveCursor(g.getX(),g.getY());
+            terminal.putCharacter(g.getSymbol());
+            
+        }
+    }
 }
