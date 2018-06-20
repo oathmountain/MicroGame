@@ -19,6 +19,9 @@ public class Renderer {
 
         }
     }
+    public Terminal getTerminal() {
+        return this.terminal;
+    }
 
-    
+
 }
