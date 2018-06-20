@@ -15,7 +15,7 @@ public abstract class GameCharacter {
     }
 
     public void moveTo(int x, int y){
-        
+
     }
 
     public char getSymbol() {
