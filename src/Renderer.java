@@ -15,7 +15,7 @@ public class Renderer {
         for(GameCharacter g : objects) {
             terminal.moveCursor(g.getX(),g.getY());
             terminal.putCharacter(g.getSymbol());
-            
+
         }
     }
 }
