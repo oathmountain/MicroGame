@@ -1,6 +1,4 @@
-import GameObjects.GameCharacter;
-import GameObjects.Monster;
-import GameObjects.Player;
+import GameObjects.*;
 import com.googlecode.lanterna.input.Key;
 
 public class Main {
@@ -8,6 +6,7 @@ public class Main {
     private static Renderer renderer;
     private static GameCharacter[] characters;
     private static boolean playerAlive;
+    public static Coordinate windowMax;
     public static void main(String[] args) {
         initializeGame();
         doGameLoop(engine, renderer, characters);
