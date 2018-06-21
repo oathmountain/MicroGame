@@ -8,6 +8,7 @@ public class Main {
     private static boolean playerAlive;
     public static Coordinate windowMax;
     private static Map map;
+    private static int score;
     public static void main(String[] args) {
         initializeGame();
         doGameLoop(engine, renderer, characters);
@@ -21,6 +22,7 @@ public class Main {
         playerAlive = true;
         map = new Map();
         engine = new GameEngine(characters, map);
+        score = 0;
 
 
     }
@@ -38,9 +40,11 @@ public class Main {
                 }catch(Exception e){
                     System.out.println("Thread is not sleeping properly!");
                 }
+                score++;
                 playerAlive = engine.tick(key, characters);
                 renderer.render(characters);
                 renderer.renderMap(map);
+                renderer.printText("Score: " + score, 4 , 0);
                 key = null;
             }
 

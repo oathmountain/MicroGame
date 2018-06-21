@@ -38,6 +38,7 @@ public class Renderer {
             }
         }
     }
+
     public void deathScreen() {
         String s = "Game Over";
 
