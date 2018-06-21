@@ -1,9 +1,7 @@
 package GameObjects;
 
 public class Monster extends GameCharacter {
-<<<<<<< HEAD
 
-=======
     private int counter;
     private int delay = 6;
     public Monster(int x, int y, char symbol) {
@@ -25,7 +23,5 @@ public class Monster extends GameCharacter {
         }else{
             counter--;
         }
-
     }
->>>>>>> ade9751ab43c5ad72c0e8836f80492157854d0ac
 }
