@@ -2,14 +2,15 @@ package GameObjects;
 
 import com.googlecode.lanterna.terminal.Terminal;
 
+import java.awt.*;
+
 public abstract class GameCharacter {
-    protected int x, y;
+    protected Coordinate coordinate;
     private char symbol;
     private Terminal.Color color;
 
     public GameCharacter(int x, int y, char symbol) {
-        this.x = x;
-        this.y = y;
+        coordinate = new Coordinate(x,y);
         this.symbol = symbol;
     }
 
@@ -18,10 +19,7 @@ public abstract class GameCharacter {
     }
 
     public void moveTo(int x, int y) {
-
-        this.x += x;
-        this.y += y;
-
+        coordinate.move(x,y);
     }
 
     public char getSymbol() {
@@ -29,10 +27,10 @@ public abstract class GameCharacter {
     }
 
     public int getX() {
-        return x;
+        return coordinate.getX();
     }
 
     public int getY() {
-        return y;
+        return coordinate.getY();
     }
 }
