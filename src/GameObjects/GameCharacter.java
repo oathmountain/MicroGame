@@ -17,11 +17,19 @@ public abstract class GameCharacter {
     }
 
     public void moveTo(int x, int y) {
-        coordinate.move(x,y);
-    }
+        coordinate.move(x, y);
+    }//Coordinate temp = new Coordinate(coordinate.getX()+x, coordinate.getY() +y);
 
     public char getSymbol() {
         return symbol;
+    }
+
+    private boolean checkCoordinate(Coordinate coordinate){
+        if(GameEngine.gameObjects[coordinate.getX()][coordinate.getY()] != 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public int getX() {

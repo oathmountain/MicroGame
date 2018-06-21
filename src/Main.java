@@ -7,18 +7,21 @@ public class Main {
     private static GameCharacter[] characters;
     private static boolean playerAlive;
     public static Coordinate windowMax;
+    private static Map map;
     public static void main(String[] args) {
         initializeGame();
         doGameLoop(engine, renderer, characters);
     }
 
     private static void initializeGame() {
-        engine = new GameEngine();
         renderer = new Renderer();
         characters = new GameCharacter[2];
         characters[0] = new Player(5,5);
         characters[1] = new Monster(10,10, 'X');
         playerAlive = true;
+        engine = new GameEngine(characters);
+        map = new Map();
+
     }
 
     private static void doGameLoop(GameEngine engine, Renderer renderer, GameCharacter[] characters) {
@@ -34,6 +37,7 @@ public class Main {
                 }
                 playerAlive = engine.tick(key, characters);
                 renderer.render(characters);
+                renderer.renderMap(map);
                 key = null;
             }
 

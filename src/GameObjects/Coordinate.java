@@ -3,7 +3,7 @@ package GameObjects;
 public class Coordinate {
     private int x;
     private int y;
-    private Coordinate windowMax;
+    private static Coordinate windowMax;
 
     public int getX() {
         return x;
