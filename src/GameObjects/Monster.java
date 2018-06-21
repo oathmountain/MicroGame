@@ -4,8 +4,8 @@ public class Monster extends GameCharacter {
 
     private int counter;
     private int delay = 5;
-    public Monster(int x, int y, char symbol) {
-        super(x, y, symbol);
+    public Monster(int x, int y) {
+        super(x, y, '\u263a');
     }
 
     public void moveTowards(Coordinate location){

@@ -4,7 +4,7 @@ import com.googlecode.lanterna.input.Key;
 
 public class Player extends GameCharacter {
     public Player(int x, int y) {
-        super(x, y, 'O');
+        super(x, y, '\u263b');
     }
 
 
