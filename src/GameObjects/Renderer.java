@@ -19,10 +19,24 @@ public class Renderer {
     public void render(GameCharacter[] objects) {
         terminal.clearScreen();
         for (GameCharacter g : objects) {
+            terminal.applyBackgroundColor(0);
             terminal.moveCursor(g.getX(), g.getY());
             terminal.putCharacter(g.getSymbol());
         }
 
+    }
+
+    public void renderMap(Map map) {
+        boolean[][] walls = map.getMap();
+        for(int i = 0; i < walls.length; i++) {
+            for(int j = 0; j < walls[i].length; j++) {
+                if(walls[i][j]) {
+                    terminal.moveCursor(i, j);
+                    terminal.applyBackgroundColor(20);
+                    terminal.putCharacter(' ');
+                }
+            }
+        }
     }
     public void deathScreen() {
         String s = "Game Over";
