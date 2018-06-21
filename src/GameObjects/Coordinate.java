@@ -11,6 +11,12 @@ public class Coordinate {
         return y;
     }
     public void move(int x, int y) {
+        if(this.x + x < 1){
+            this.x = 1;
+        }
+        if(this.y + y < 1){
+            this.y = 1;
+        }
         this.x += x;
         this.y += y;
     }
