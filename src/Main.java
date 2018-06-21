@@ -39,7 +39,6 @@ public class Main {
 
             //System.out.println(key.getCharacter() + " " + key.getKind());
         }
-        System.out.println("NOOOO du doooog");
         renderer.deathScreen();
     }
 }
