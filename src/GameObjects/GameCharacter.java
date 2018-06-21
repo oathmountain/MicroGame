@@ -2,8 +2,6 @@ package GameObjects;
 
 import com.googlecode.lanterna.terminal.Terminal;
 
-import java.awt.*;
-
 public abstract class GameCharacter {
     protected Coordinate coordinate;
     private char symbol;
