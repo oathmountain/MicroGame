@@ -21,6 +21,28 @@ public class Renderer {
         }
 
     }
+    public void deathScreen() {
+        String s = "Game Over";
+
+        drawSquare(10,10, 15,5);
+        printText(s, 13,12);
+    }
+    public void printText(String s, int startX, int y) {
+        for(int i = 0; i < s.length(); i++) {
+            terminal.moveCursor(startX + i, y);
+            terminal.putCharacter(s.charAt(i));
+        }
+    }
+
+    public void drawSquare(int startX, int startY, int width, int height) {
+        for(int i = startX; i < startX + width; i++) {
+            for(int j = startY; j < startY + height; j++) {
+                terminal.moveCursor(i, j);
+                terminal.applyBackgroundColor(75);
+                terminal.putCharacter(' ');
+            }
+        }
+    }
 
     public Terminal getTerminal() {
         return this.terminal;
