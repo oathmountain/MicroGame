@@ -3,7 +3,7 @@ package GameObjects;
 import com.googlecode.lanterna.terminal.Terminal;
 
 public abstract class GameCharacter {
-    private int x, y;
+    protected int x, y;
     private char symbol;
     private Terminal.Color color;
 
@@ -18,7 +18,8 @@ public abstract class GameCharacter {
     }
 
     public void moveTo(int x, int y) {
-
+        this.x = x;
+        this.y = y;
     }
 
     public char getSymbol() {

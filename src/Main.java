@@ -24,6 +24,7 @@ public class Main {
             }while(key == null);
 
             System.out.println(key.getCharacter() + " " + key.getKind());
+            
         }
     }
 }

@@ -10,6 +10,7 @@ public class Renderer {
     public Renderer() {
         terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
         terminal.enterPrivateMode();
+        terminal.setCursorVisible(false);
     }
 
     public void render(GameCharacter[] objects) {
@@ -17,9 +18,8 @@ public class Renderer {
         for (GameCharacter g : objects) {
             terminal.moveCursor(g.getX(), g.getY());
             terminal.putCharacter(g.getSymbol());
-
         }
-        terminal.moveCursor(100, 100);
+
     }
 
     public Terminal getTerminal() {
