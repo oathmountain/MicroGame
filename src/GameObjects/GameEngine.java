@@ -19,7 +19,6 @@ public class GameEngine {
     public boolean tick(Key key, GameCharacter[] characters) {
         Player player = (Player) characters[0];
         if (checkKey(key)) {
-
             player.moveTo(key);
         }
         moveMonsters(characters, player);
