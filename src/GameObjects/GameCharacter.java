@@ -18,8 +18,13 @@ public abstract class GameCharacter {
     }
 
     public void moveTo(int x, int y) {
+<<<<<<< HEAD
         this.x = x;
         this.y = y;
+=======
+        this.x += x;
+        this.y += y;
+>>>>>>> 2572408ddcbe46c2328f00330de3976f51148591
     }
 
     public char getSymbol() {
