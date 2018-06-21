@@ -38,8 +38,8 @@ public class Main {
     }
 
     private static void doGameLoop(GameEngine engine, Renderer renderer, GameCharacter[] characters) {
-        renderer.render(characters);
-        renderer.renderMap(map);
+
+        renderer.draw(characters, map, score);
         while(playerAlive){
             Key key;
 

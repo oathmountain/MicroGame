@@ -15,7 +15,7 @@ public class Renderer {
         terminal.setCursorVisible(false);
         windowMax = new Coordinate(terminal.getTerminalSize().getColumns(), terminal.getTerminalSize().getRows());
     }
-
+    // Render Monsters and player
     public void render(GameCharacter[] objects) {
         terminal.clearScreen();
         for (GameCharacter g : objects) {
@@ -26,6 +26,7 @@ public class Renderer {
 
     }
 
+    // Render walls
     public void renderMap(Map map) {
         boolean[][] walls = map.getMap();
         for(int i = 0; i < walls.length; i++) {
@@ -41,14 +42,19 @@ public class Renderer {
 
     public void deathScreen() {
         String s = "Game Over";
-        drawSquare(41, 10, 17,6);
+        drawSquare(41, 10, 17,5);
         printText(s, 45, 12);
-
-
     }
+
+    // calls all the render methods
     public void draw(GameCharacter[] objects, Map map, int score) {
         render(objects);
         renderMap(map);
+        printScore(score);
+    }
+
+    private void printScore(int score) {
+        printText("Score: " + score, 4, 0);
     }
 
     public void printText(String s, int startX, int y) {
