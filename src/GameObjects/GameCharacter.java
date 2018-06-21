@@ -33,4 +33,7 @@ public abstract class GameCharacter {
     public int getY() {
         return coordinate.getY();
     }
+    public Coordinate getCoordinate(){
+        return coordinate;
+    }
 }

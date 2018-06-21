@@ -19,4 +19,13 @@ public class Coordinate {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Coordinate other = (Coordinate)obj;
+        if(x == other.getX() && y == other.getY()){
+            return true;
+        }
+        return false;
+    }
 }

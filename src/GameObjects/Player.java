@@ -10,12 +10,12 @@ public class Player extends GameCharacter {
 
     public void moveTo(Key key) {
         if(key.getKind() == Key.Kind.ArrowDown)
-            y++;
+            moveTo(0,1);
         else if(key.getKind() == Key.Kind.ArrowUp)
-            y--;
+            moveTo(0,-1);
         else if(key.getKind() == Key.Kind.ArrowLeft)
-            x--;
+            moveTo(-1,0);
         else if(key.getKind() == Key.Kind.ArrowRight)
-            x++;
+            moveTo(1,0);
     }
 }
