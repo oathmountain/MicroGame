@@ -13,10 +13,10 @@ public class GameEngine {
     }
 
     private boolean checkKey(Key key) {
-        if (key.getKind() == Key.Kind.ArrowDown ||
+        if (key != null && (key.getKind() == Key.Kind.ArrowDown ||
                 key.getKind() == Key.Kind.ArrowLeft ||
                 key.getKind() == Key.Kind.ArrowUp ||
-                key.getKind() == Key.Kind.ArrowRight) {
+                key.getKind() == Key.Kind.ArrowRight)) {
             return true;
         }
         return false;
