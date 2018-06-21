@@ -1,12 +1,14 @@
 import GameObjects.*;
 import com.googlecode.lanterna.input.Key;
 
+import java.util.Random;
+
 public class Main {
     private static GameEngine engine;
     private static Renderer renderer;
     private static GameCharacter[] characters;
     private static boolean playerAlive;
-    public static Coordinate windowMax;
+
     private static Map map;
     private static int score;
     public static void main(String[] args) {
@@ -16,8 +18,16 @@ public class Main {
 
     private static void initializeGame() {
         renderer = new Renderer();
-        characters = new GameCharacter[2];
+        Random rand = new Random();
+        int randomInt = rand.nextInt(20);
+        characters = new GameCharacter[randomInt];
         characters[0] = new Player(5,5);
+
+        for(int i = 1; i < randomInt; i++){
+            int x = rand.nextInt(Renderer.windowMax.getX());
+            int y = rand.nextInt(Renderer.windowMax.getY());
+            characters[i] = new Monster(x,y, 'X');
+        }
         characters[1] = new Monster(10,10, 'X');
         playerAlive = true;
         map = new Map();

@@ -9,15 +9,20 @@ public class Map {
         Random rand = new Random();
         for(int i = 0; i < Renderer.windowMax.getX();i++){
             for(int y = 0; y < Renderer.windowMax.getY();y++){
+                
+                //Make outer walls
                 if(i == 0 || y == 0 || i == Renderer.windowMax.getX()-1 || y == Renderer.windowMax.getY()-1){
                     map[i][y] = true;
                 }
+
+                //Make fixed inner walls
                 if(i == 15 && y > 10 && y < 20){
                     map[i][y] = true;
                 }
                 if(y == 10 && i > 10 && i < 15){
                     map[i][y] = true;
                 }
+                //Make random walls
                 if(rand.nextInt(10) == 1) {
                     map[i][y] = true;
                 }
