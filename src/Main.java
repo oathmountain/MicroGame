@@ -26,9 +26,9 @@ public class Main {
         for(int i = 1; i < randomInt; i++){
             int x = rand.nextInt(Renderer.windowMax.getX());
             int y = rand.nextInt(Renderer.windowMax.getY());
-            characters[i] = new Monster(x,y, 'X');
+            int delay = rand.nextInt(3);
+            characters[i] = new Monster(x,y, 'X',delay);
         }
-        characters[1] = new Monster(10,10, 'X');
         playerAlive = true;
         map = new Map();
         engine = new GameEngine(characters, map);

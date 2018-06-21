@@ -9,7 +9,7 @@ public class Map {
         Random rand = new Random();
         for(int i = 0; i < Renderer.windowMax.getX();i++){
             for(int y = 0; y < Renderer.windowMax.getY();y++){
-                
+
                 //Make outer walls
                 if(i == 0 || y == 0 || i == Renderer.windowMax.getX()-1 || y == Renderer.windowMax.getY()-1){
                     map[i][y] = true;
