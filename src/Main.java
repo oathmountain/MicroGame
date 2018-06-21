@@ -42,9 +42,7 @@ public class Main {
                 }
                 score++;
                 playerAlive = engine.tick(key, characters);
-                renderer.render(characters);
-                renderer.renderMap(map);
-                renderer.printText("Score: " + score, 4 , 0);
+                renderer.draw(characters, map, score);
                 key = null;
             }
 

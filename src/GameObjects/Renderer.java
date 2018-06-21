@@ -41,10 +41,16 @@ public class Renderer {
 
     public void deathScreen() {
         String s = "Game Over";
+        drawSquare(41, 10, 17,6);
+        printText(s, 45, 12);
 
-        drawSquare(10,10, 15,5);
-        printText(s, 13,12);
+
     }
+    public void draw(GameCharacter[] objects, Map map, int score) {
+        render(objects);
+        renderMap(map);
+    }
+
     public void printText(String s, int startX, int y) {
         for(int i = 0; i < s.length(); i++) {
             terminal.moveCursor(startX + i, y);
