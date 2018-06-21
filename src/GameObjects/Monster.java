@@ -12,15 +12,18 @@ public class Monster extends GameCharacter {
         if(counter == 0) {
             int diffX = coordinate.getX() - location.getX();
             int diffY = coordinate.getY() - location.getY();
-
-            if(Math.abs(diffX) > Math.abs(diffY)) {
+            if(Math.abs(diffX) > Math.abs(diffY) && !coordinateIsWall(new Coordinate(coordinate.getX() +(diffX >0?-1:1),coordinate.getY()))) {
                 moveTo(diffX > 0 ? -1 : 1, 0);
-            } else {
+            } else if(!coordinateIsWall(new Coordinate(coordinate.getX(),coordinate.getY() + (diffY > 0 ? -1 : 1)))){
+                moveTo(0,diffY > 0 ? -1 : 1);
+            }else if( !coordinateIsWall(new Coordinate(coordinate.getX() -(diffX >0?-1:1),coordinate.getY()))){
+                moveTo(diffX > 0 ? -1 : 1, 0);
+            }else{
                 moveTo(0,diffY > 0 ? -1 : 1);
             }
 
             counter = delay;
-        }else{
+        }else {
             counter--;
         }
     }
