@@ -3,13 +3,22 @@ import GameObjects.Player;
 import com.googlecode.lanterna.input.Key;
 
 public class Main {
+    private static GameEngine engine;
+    private static Renderer renderer;
+    private static GameCharacter[] characters;
     public static void main(String[] args) {
-        GameEngine engine = new GameEngine();
-        Renderer renderer = new Renderer();
-        GameCharacter[] characters = new GameCharacter[1];
+        initializeGame();
+        doGameLoop(engine, renderer, characters);
+    }
+
+    private static void initializeGame() {
+        engine = new GameEngine();
+        renderer = new Renderer();
+        characters = new GameCharacter[1];
         characters[0] = new Player(5,5);
+    }
 
-
+    private static void doGameLoop(GameEngine engine, Renderer renderer, GameCharacter[] characters) {
         while(true){
             Key key;
             do{
@@ -24,7 +33,6 @@ public class Main {
             }while(key == null);
 
             System.out.println(key.getCharacter() + " " + key.getKind());
-
         }
     }
 }
