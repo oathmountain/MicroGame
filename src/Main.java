@@ -22,6 +22,7 @@ public class Main {
     }
 
     private static void doGameLoop(GameEngine engine, Renderer renderer, GameCharacter[] characters) {
+        renderer.render(characters);
         while(playerAlive){
             Key key;
 
