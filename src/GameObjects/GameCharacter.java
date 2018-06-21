@@ -24,12 +24,8 @@ public abstract class GameCharacter {
         return symbol;
     }
 
-    private boolean checkCoordinate(Coordinate coordinate){
-        if(GameEngine.gameObjects[coordinate.getX()][coordinate.getY()] != 0){
-            return true;
-        }else{
-            return false;
-        }
+    protected boolean coordinateIsWall(Coordinate coordinate){
+        return GameEngine.map.getMap()[coordinate.getX()][coordinate.getY()];
     }
 
     public int getX() {

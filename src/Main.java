@@ -19,8 +19,9 @@ public class Main {
         characters[0] = new Player(5,5);
         characters[1] = new Monster(10,10, 'X');
         playerAlive = true;
-        engine = new GameEngine(characters);
         map = new Map();
+        engine = new GameEngine(characters, map);
+
 
     }
 

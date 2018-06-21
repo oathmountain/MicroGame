@@ -6,8 +6,10 @@ import com.googlecode.lanterna.input.Key;
 
 public class GameEngine {
     static int [][] gameObjects;
+    static Map map;
     private final int MONSTER = 2, WALL = 1, EMPTY = 0;
-    public GameEngine(GameCharacter[] characters){
+    public GameEngine(GameCharacter[] characters, Map map){
+        this.map = map;
         gameObjects = new int[Renderer.windowMax.getX()][Renderer.windowMax.getY()];
         for(int i = 1; i < characters.length;i++){
             gameObjects[characters[i].getX()][characters[i].getY()] = MONSTER;
