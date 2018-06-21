@@ -5,15 +5,10 @@ import com.googlecode.lanterna.terminal.Terminal;
 public abstract class GameCharacter {
     protected Coordinate coordinate;
     private char symbol;
-    private Terminal.Color color;
 
     public GameCharacter(int x, int y, char symbol) {
         coordinate = new Coordinate(x,y);
         this.symbol = symbol;
-    }
-
-    public Terminal.Color getColor() {
-        return color;
     }
 
     public void moveTo(int x, int y) {
