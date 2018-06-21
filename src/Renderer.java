@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 
 public class Renderer {
     private Terminal terminal;
+
     public Renderer() {
         terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
         terminal.enterPrivateMode();
@@ -13,12 +14,14 @@ public class Renderer {
 
     public void render(GameCharacter[] objects) {
         terminal.clearScreen();
-        for(GameCharacter g : objects) {
-            terminal.moveCursor(g.getX(),g.getY());
+        for (GameCharacter g : objects) {
+            terminal.moveCursor(g.getX(), g.getY());
             terminal.putCharacter(g.getSymbol());
 
         }
+        terminal.moveCursor(100, 100);
     }
+
     public Terminal getTerminal() {
         return this.terminal;
     }

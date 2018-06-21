@@ -7,7 +7,8 @@ public class Main {
         GameEngine engine = new GameEngine();
         Renderer renderer = new Renderer();
         GameCharacter[] characters = new GameCharacter[1];
-        characters[0] = new Player();
+        characters[0] = new Player(5,5);
+
 
         while(true){
             Key key;
